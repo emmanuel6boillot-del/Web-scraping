@@ -118,5 +118,3 @@ class DatabaseManager:
 
     def fermeture_base(self):
         self.conn.close()
-
-db = DatabaseManager("database.db")

@@ -1,6 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import sqlite3
+from datas import DatabaseManager
+
+db = DatabaseManager("database.db")
+db.connexion_SQLite()
 
 url = "https://books.toscrape.com/"
 response = requests.get(url)
@@ -55,5 +60,6 @@ for x in links :
 
         data[titre] = {"prix" : float(prix[2:]) , "note" : note, "catégorie" : catégorie }
 
-with open("data.json", "w", encoding="utf-8") as f:
-    json.dump(data, f, ensure_ascii=False, indent=4)
+        db.insertion_annonces([titre, float(prix[2:]), note, catégorie])
+
+db.fermeture_base()
