@@ -6,6 +6,7 @@ from datas import DatabaseManager
 
 db = DatabaseManager("database.db")
 db.connexion_SQLite()
+db.creation_tables()
 
 url = "https://books.toscrape.com/"
 response = requests.get(url)
