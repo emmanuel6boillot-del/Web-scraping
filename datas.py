@@ -100,15 +100,15 @@ class DatabaseManager:
                     sortie.append(txt[deb,fin-1])
                     deb = fin
                 else: 
-                    fin + = 1
-            sortie.append txt[deb,-1]
+                    fin += 1
+            sortie.append(txt[deb,-1])
             return res
         
         for ligne in res:
             sortie = cut(ligne[0])
             for x in sortie:
                 if x in dictionnaire:
-                    dictionnaire[x] + = 1
+                    dictionnaire[x] += 1
                 else:
                     dictionnaire[x] = 1
         
