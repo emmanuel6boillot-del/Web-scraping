@@ -1,4 +1,4 @@
-from datas import DatabaseManager
+from src.datas import DatabaseManager
 import matplotlib.pyplot as plt
 
 
